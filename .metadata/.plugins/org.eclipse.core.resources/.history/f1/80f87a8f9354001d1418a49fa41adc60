@@ -1,0 +1,33 @@
+package com.company.taxicorporation;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.testng.annotations.*;
+
+import com.company.taxicorporation.services.BookingService;
+import com.company.taxicorporation.services.RideService;
+import com.company.taxicorporation.users.Driver;
+
+public class DriverBookings extends BaseClass {
+	
+	public DriverBookings() {
+		super();
+	}
+	@BeforeClass
+	public void setUp() {
+		dbConnect();
+	}
+	
+	public List<Driver> getRides(int d_id, String d_license) {
+		List<Driver> driverList = new ArrayList<Driver>();
+        for(Driver driver : userService.getDriverMap().values()){
+            if(driver.isAvailable() && distance(driver.getVehicle().getLocation(), location) <= MAX_DISTANCE){
+                driverList.add(driver);
+            }
+        }
+        return driverList;
+    }
+		
+		
+
+}

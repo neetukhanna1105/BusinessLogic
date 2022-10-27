@@ -1,0 +1,22 @@
+package com.company.taxicorporation;
+import java.util.List;
+
+import org.testng.annotations.*;
+
+import com.company.taxicorporation.services.BookingService;
+
+public class DriverBookings extends BaseClass {
+	
+	public DriverBookings() {
+		super();
+	}
+	@BeforeClass
+	public void setUp() {
+		dbConnect();
+	}
+	
+	public List<BookingService> driverRides(int d_id){
+		
+	}
+
+}

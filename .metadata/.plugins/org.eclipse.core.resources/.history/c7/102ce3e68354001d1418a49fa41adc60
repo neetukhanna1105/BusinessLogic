@@ -1,0 +1,41 @@
+package com.company.taxicorporation.services;
+
+import java.util.Date;
+
+import com.company.taxicorporation.users.Driver;
+import com.company.taxicorporation.users.Location;
+import com.company.taxicorporation.users.Vehicle;
+
+public class DriverService {
+	private static DriverService cabBookingService = null;
+
+    private DriverService(){
+
+    }
+
+    public static DriverService getInstance(){
+        if(cabBookingService == null){
+            cabBookingService = new DriverService();
+        }
+        return cabBookingService;
+    }
+
+    private RideBookingDetail userService = RideBookingDetail.getInstance();
+
+    private RiderService rideService = RiderService.getInstance();
+
+    public Driver registerDriver(int d_id, String d_firstname, String d_lastname, String d_gender, Vehicle vehicle, String d_license, Date d_expiry, boolean available) throws CreateException{
+        return userService.registerDriver(d_id, d_firstname, d_lastname, d_gender, vehicle, d_license, d_expiry, available);
+    }
+    public Rider registerRider(String name, int id, Gender gender, Location fromLocation, Location toLocation) throws CreateException {
+        return userService.registerRider(name, id, gender, fromLocation, toLocation);
+    }
+
+    public Driver bookRide(int riderId, Location fromLocation, Location toLocation) throws DriverNotAvailableException {
+        return rideService.bookRide(riderId, fromLocation, toLocation);
+    }
+
+}
+
+
+}

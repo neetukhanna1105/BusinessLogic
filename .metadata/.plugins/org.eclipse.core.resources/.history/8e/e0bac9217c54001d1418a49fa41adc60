@@ -1,0 +1,43 @@
+package com.company.taxicorporation.users;
+
+public class Vehicle {
+	private String model;
+    private int license_no;
+    private int manufacture_year;
+    private int owner_id;
+    private Location location;
+
+    public Vehicle(String model, int license_no, int manufacture_year, int owner_id, Location location)
+    {
+        this.model = model;
+        this.license_no = license_no;
+        this.manufacture_year = manufacture_year;
+        this.owner_id = owner_id;
+        this.location = location;
+    }
+
+    public String getModelname() {
+        return model;
+    }
+
+    public void setModelname(String model) {
+        this.model = model;
+    }
+
+    public int getModel() {
+        return model;
+    }
+
+    public void setModel(int model) {
+        this.model = model;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+}

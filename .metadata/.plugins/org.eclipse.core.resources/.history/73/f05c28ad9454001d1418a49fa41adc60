@@ -1,0 +1,37 @@
+package com.company.taxicorporation;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.testng.annotations.*;
+
+import com.company.taxicorporation.services.BookingService;
+import com.company.taxicorporation.services.RideService;
+import com.company.taxicorporation.services.UserService;
+import com.company.taxicorporation.users.Driver;
+import com.company.taxicorporation.users.Location;
+
+public class DriverBookings extends BaseClass {
+	private UserService userService = UserService.getInstance();
+	private BookingService bookingService = BookingService.getInstance();
+	public DriverBookings() {
+		super();
+	}
+	@BeforeClass
+	public void setUp() {
+		dbConnect();
+	}
+	
+	public List<Driver> getRides(Driver d_id) {
+		Driver d1 = null;
+		try {
+			d1= bookingService.bookRide(riderId, fromLocation, toLocation)
+		}
+		catch(CreateException e){
+            e.getMessage();
+        }
+		return null;
+		
+		
+	}	
+
+}

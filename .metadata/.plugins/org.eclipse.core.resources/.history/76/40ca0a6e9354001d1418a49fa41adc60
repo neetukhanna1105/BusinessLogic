@@ -1,0 +1,29 @@
+package com.company.taxicorporation;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.testng.annotations.*;
+
+import com.company.taxicorporation.services.BookingService;
+import com.company.taxicorporation.services.RideService;
+import com.company.taxicorporation.users.Driver;
+
+public class DriverBookings extends BaseClass {
+	
+	public DriverBookings() {
+		super();
+	}
+	@BeforeClass
+	public void setUp() {
+		dbConnect();
+	}
+	
+	public List<Driver> getRides(Driver d_id) {
+		List<Driver> rideService = new ArrayList<Driver>();
+		rideService.bookRide(d_id);
+		return rideService;
+		
+		
+	}
+
+}

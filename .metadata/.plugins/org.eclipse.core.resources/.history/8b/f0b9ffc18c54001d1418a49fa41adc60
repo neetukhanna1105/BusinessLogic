@@ -1,0 +1,16 @@
+package com.company.taxicorporation;
+import org.testng.annotations.BeforeClass;
+
+public class DriverBookings extends BaseClass {
+	
+	public DriverBookings() {
+		super();
+	}
+	@BeforeClass
+	public void setUp() {
+		dbConnect();
+	}
+	//BookingService booking = BookingService.getInstance();
+	
+
+}

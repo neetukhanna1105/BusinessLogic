@@ -1,0 +1,49 @@
+package com.company.taxicorporation;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.util.*;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+
+public class BaseClass 
+{
+	public static WebDriver driver;
+	public static Properties prop;
+	private Connection connection;
+    public void TestBase() {
+    	try {
+    	prop = new Properties();
+		FileInputStream ip = new FileInputStream(
+				System.getProperty("user.dir") + "/config/config.properties");
+		prop.load(ip);
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+    }
+    
+    public static void dbConnect() {
+    	String databaseURL = "jdbc:mysql://localhost:3306/easy";
+    	String userName = prop.getProperty("UserName");
+    	String password = prop.getProperty("Password");
+    	connection = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("Connecting to Database...");
+            connection = DriverManager.getConnection(databaseURL, user, password);
+            if (connection != null) {
+                System.out.println("Connected to the Database...");
+            }
+        } catch (SQLException ex) {
+           ex.printStackTrace();
+        }
+        catch (ClassNotFoundException ex) {
+           ex.printStackTrace();
+        }
+    	
+}
+}

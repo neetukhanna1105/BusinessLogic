@@ -1,0 +1,14 @@
+package com.company.taxicorporation;
+
+import org.testng.annotations.BeforeClass;
+
+public class RiderHistory extends BaseClass {
+	public RiderHistory() {
+		super();
+	}
+	@BeforeClass
+	public void setUp() {
+		dbConnect();
+	}
+
+}

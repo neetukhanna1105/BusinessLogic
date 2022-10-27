@@ -1,0 +1,36 @@
+package com.company.taxicorporation.users;
+
+import java.util.Date;
+
+public class Driver extends User {
+
+    private Vehicle vehicle;
+    private boolean available;
+    private String license;
+    private Integer expiry;
+
+    public Driver(String firstname, String lastname, int dob, String gender, Vehicle vehicle, String license, Integer expiry, boolean available){
+        super(firstname, lastname, dob, gender);
+        this.vehicle = vehicle;
+        this.license = license;
+        this.expiry = expiry;
+        this.available = available;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+}
+

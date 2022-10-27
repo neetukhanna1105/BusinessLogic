@@ -1,0 +1,28 @@
+package com.company.taxicorporation;
+
+import java.util.List;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.company.taxicorporation.services.BookingService;
+import com.company.taxicorporation.users.Location;
+
+public class RiderHistory extends BaseClass {
+	public RiderHistory() {
+		super();
+	}
+	@BeforeClass
+	public void setUp() {
+		dbConnect();
+	}
+
+	@Test
+	public List<BookingService> riderhistory(int d_id) {
+		BookingService bookingHistory = new BookingService();
+		int r_id;
+		Location fromLocation, toLocation
+		bookingHistory.bookRide(r_id, fromLocation, toLocation);
+        return (List<BookingService>) bookingHistory;		
+	}
+}

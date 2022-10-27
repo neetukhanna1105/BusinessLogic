@@ -1,0 +1,5 @@
+package com.company.taxicorporation.config;
+
+public class BrowserSetting {
+
+}

@@ -1,0 +1,15 @@
+package com.company.taxicorporation;
+
+import org.testng.annotations.BeforeClass;
+
+public class DriverLicenseList extends BaseClass {
+	public DriverLicenseList() {
+		super();
+	}
+	@BeforeClass
+	public void setUp() {
+		dbConnect();
+	}
+
+
+}

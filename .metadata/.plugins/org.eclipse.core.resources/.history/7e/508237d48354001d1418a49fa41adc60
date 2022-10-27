@@ -1,0 +1,8 @@
+package com.company.taxicorporation.Exceptions;
+
+public class DriverNotFoundExceptio extends Exception{
+
+    public DriverNotFoundException(String message){
+        super(message);
+    }
+}

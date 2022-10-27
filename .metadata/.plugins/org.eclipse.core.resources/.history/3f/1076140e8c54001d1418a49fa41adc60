@@ -1,0 +1,19 @@
+package com.company.taxicorporation;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.*;
+
+import com.company.taxicorporation.services.*;
+
+public class DriverBookings extends BaseClass {
+	
+	public DriverBookings() {
+		super();
+	}
+	
+	@BeforeMethod
+	
+	BookingService booking = BookingService.getInstance();
+	
+
+}
